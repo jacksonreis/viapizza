@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forno Negro Pizzaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    /* SECTION */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+      --red:#8b0000;
+      --gold:#ffcc70;
+      --black:#0d0d0d;
+      --white:#ffffff;
+      --gray:#999;
+      --card:#171717;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--black);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+
+
+    .btn{
+      background:linear-gradient(45deg,var(--gold),#ff9f43);
+      color:black;
+      padding:14px 28px;
+      border-radius:50px;
+      font-weight: 500;
+      text-decoration:none;
+      transition:0.4s;
+      display:inline-block;
+    }
+
+    .btn:hover{
+      transform:translateY(-4px) scale(1.05);
+      box-shadow:0 10px 30px rgba(255,204,112,0.4);
+    }
+
+
+    .btn-outline{
+      border:2px solid rgba(255,255,255,0.2);
+      color:white;
+      padding:14px 28px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .btn-outline:hover{
+      border-color:var(--gold);
+      color:var(--gold);
+      transform:translateY(-4px);
+    }
+
+    section{
+      padding: 120px 8%;
+      background-color: #110706;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title span{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .section-title h2{
+      margin-top:15px;
+      font-size:55px;
+    }
+
+    .section-title h2 b{
+      color:var(--gold);
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:30px;
+      transition:0.5s;
+    }
+
+    .about img:hover{
+      transform:scale(1.03);
+    }
+
+    .about-text p{
+      color:#bbb;
+      line-height:1.8;
+      margin:25px 0;
+      font-size:17px;
+    }
+
+    /* MENU */
+
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .menu-card{
+      background:var(--card);
+      border-radius:30px;
+      overflow:hidden;
+      transition:0.5s;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .menu-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.4);
+      border-color:rgba(255,204,112,0.3);
+    }
+
+    .menu-card img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      transition:0.6s;
+    }
+
+    .menu-card:hover img{
+      transform:scale(1.1);
+    }
+
+    .menu-content{
+      padding:30px;
+    }
+
+    .menu-content h3{
+      font-size:24px;
+      margin-bottom:10px;
+    }
+
+    .menu-content p{
+      color:#aaa;
+      margin-bottom:20px;
+      line-height:1.6;
+    }
+
+    .price{
+      color:var(--gold);
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:20px;
+      display:block;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width: 892px){
+
+      .hero h1{
+        font-size:55px;
+      }
+
+      .about,
+      .contact-container{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        display:none;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .section-title h2{
+        font-size:38px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .btn, .btn-outline, .btn-outline:hover {
+        text-align: center;
+        height: 40px;
+        width: 140px;
+        font-size: 13px;
+        padding: 12px;
+      }
+      .tag {
+        font-size: 12px;
+        padding: 4px 10px;
+      }
+
+      
+
+    }
+</style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+ <section id="cardapio">
+
+    <div class="section-title" data-aos="fade-up">
+      <span>Cardápio</span>
+      <h2>Pizzas <b></b></h2>
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="menu-card" data-aos="fade-up">
+
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Pizzas tradicionais</h3>
+
+          <!--<span class="price">R$ 38</span>
+
+           <p>
+            Massa artesanal com até 2 sabores.
+          </p> -->
+
+          <a href="index2.html" class="btn">
+            Ver agora
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="100">
+
+        <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Pizzas especiais</h3>
+
+          <!--<span class="price">R$ 42</span>
+
+           <p>
+            Filé mignon, cebola caramelizada e catupiry.
+          </p> -->
+
+          <a href="index2.html" class="btn">
+            Ver agora
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="200">
+
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="menu-content">
+
+          <h3>Pizzas doces</h3>
+
+          <!--<span class="price">R$ 32</span>
+
+           <p>
+            Massas italianas frescas com molhos artesanais.
+          </p> -->
+
+          <a href="index2.html" class="btn">
+            Ver agora
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+</body>
+</html>
