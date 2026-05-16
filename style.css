@@ -510,10 +510,9 @@
 
       .btn, .btn-outline, .btn-outline:hover {
         text-align: center;
-        height: 40px;
-        width: 140px;
+        
         font-size: 13px;
-        padding: 12px;
+        padding: 6px 20px;
       }
       .tag {
         font-size: 12px;
