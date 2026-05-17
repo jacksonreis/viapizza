@@ -1,323 +1,314 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forno Negro Pizzaria</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-    /* SECTION */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cardápio Pizza</title>
 
+  <style>
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    :root{
-      --red:#8b0000;
-      --gold:#ffcc70;
-      --black:#0d0d0d;
-      --white:#ffffff;
-      --gray:#999;
-      --card:#171717;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body{
-      font-family:'Poppins',sans-serif;
-      background:var(--black);
+      background:#090000;
       color:white;
-      overflow-x:hidden;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      padding:40px 15px;
     }
 
-    /* NAVBAR */
-
-
-
-    .btn{
-      background:linear-gradient(45deg,var(--gold),#ff9f43);
-      color:black;
-      padding:14px 28px;
-      border-radius:50px;
-      font-weight: 500;
-      text-decoration:none;
-      transition:0.4s;
-      display:inline-block;
+    .container{
+      width:100%;
+      max-width:420px;
     }
 
-    .btn:hover{
-      transform:translateY(-4px) scale(1.05);
-      box-shadow:0 10px 30px rgba(255,204,112,0.4);
+    .title{
+      font-size:48px;
+      font-weight:800;
+      margin-bottom:30px;
+      letter-spacing:-2px;
     }
 
-
-    .btn-outline{
-      border:2px solid rgba(255,255,255,0.2);
-      color:white;
-      padding:14px 28px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:600;
-      transition:0.4s;
-    }
-
-    .btn-outline:hover{
-      border-color:var(--gold);
-      color:var(--gold);
-      transform:translateY(-4px);
-    }
-
-    section{
-      padding: 120px 8%;
-      background-color: #110706;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:70px;
-    }
-
-    .section-title span{
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:4px;
-      font-size:13px;
-      font-weight:600;
-    }
-
-    .section-title h2{
-      margin-top:15px;
-      font-size:55px;
-    }
-
-    .section-title h2 b{
-      color:var(--gold);
-    }
-
-    /* ABOUT */
-
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
+    .pizza-card{
+      width:100%;
+      background:#260000;
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:28px;
+      padding:14px;
+      display:flex;
       align-items:center;
+      gap:14px;
+      margin-bottom:18px;
+      transition:0.3s;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.02),
+        0 10px 30px rgba(0,0,0,0.4);
     }
 
-    .about img{
-      width:100%;
-      border-radius:30px;
-      transition:0.5s;
+    .pizza-card:hover{
+      transform:translateY(-3px);
     }
 
-    .about img:hover{
-      transform:scale(1.03);
-    }
-
-    .about-text p{
-      color:#bbb;
-      line-height:1.8;
-      margin:25px 0;
-      font-size:17px;
-    }
-
-    /* MENU */
-
-    .menu-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:30px;
-    }
-
-    .menu-card{
-      background:var(--card);
-      border-radius:30px;
-      overflow:hidden;
-      transition:0.5s;
-      border:1px solid rgba(255,255,255,0.06);
-    }
-
-    .menu-card:hover{
-      transform:translateY(-10px);
-      box-shadow:0 15px 40px rgba(0,0,0,0.4);
-      border-color:rgba(255,204,112,0.3);
-    }
-
-    .menu-card img{
-      width:100%;
-      height:260px;
+    .pizza-image{
+      width:125px;
+      height:125px;
+      border-radius:22px;
       object-fit:cover;
-      transition:0.6s;
     }
 
-    .menu-card:hover img{
-      transform:scale(1.1);
+    .pizza-content{
+      flex:1;
     }
 
-    .menu-content{
-      padding:30px;
+    .pizza-name{
+      font-size:32px;
+      font-weight:800;
+      margin-bottom:8px;
     }
 
-    .menu-content h3{
-      font-size:24px;
-      margin-bottom:10px;
+    .pizza-description{
+      color:#b8a9a9;
+      font-size:12px;
+      line-height:1.5;
+      margin-bottom:18px;
     }
 
-    .menu-content p{
-      color:#aaa;
-      margin-bottom:20px;
-      line-height:1.6;
+    .pizza-size{
+      color:#d0c1c1;
+      font-size:10px;
+      font-weight:bold;
+      margin-bottom:3px;
     }
 
-    .price{
-      color:var(--gold);
-      font-size:22px;
-      font-weight:700;
-      margin-bottom:20px;
-      display:block;
+    .pizza-price{
+      color:#f3b321;
+      font-size:30px;
+      font-weight:800;
     }
 
-    /* RESPONSIVO */
+    .add-btn{
+      width:58px;
+      height:58px;
+      min-width:58px;
+      border:none;
+      border-radius:50%;
+      background:#f3b321;
+      color:#3d1200;
+      font-size:34px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
 
-    @media(max-width: 892px){
+    .add-btn:hover{
+      transform:scale(1.08);
+    }
 
-      .hero h1{
-        font-size:55px;
+    .cart{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:#f3b321;
+      color:#000;
+      padding:18px 24px;
+      border-radius:20px;
+      font-weight:bold;
+      font-size:18px;
+      cursor:pointer;
+      border:none;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      transition:0.3s;
+    }
+
+    .cart:hover{
+      transform:scale(1.05);
+    }
+
+    @media(max-width:500px){
+
+      .title{
+        font-size:34px;
       }
 
-      .about,
-      .contact-container{
-        grid-template-columns:1fr;
+      .pizza-name{
+        font-size:22px;
       }
 
-      nav{
-        display:none;
+      .pizza-price{
+        font-size:24px;
+      }
+
+      .pizza-image{
+        width:95px;
+        height:95px;
+      }
+
+      .pizza-card{
+        border-radius:22px;
       }
     }
 
-    @media(max-width:600px){
-
-      .hero h1{
-        font-size:42px;
-      }
-
-      .section-title h2{
-        font-size:38px;
-      }
-
-      .hero p{
-        font-size:18px;
-      }
-
-      .btn, .btn-outline, .btn-outline:hover {
-        text-align: center;
-        height: 40px;
-        width: 140px;
-        font-size: 13px;
-        padding: 12px;
-      }
-      .tag {
-        font-size: 12px;
-        padding: 4px 10px;
-      }
-
-      
-
-    }
-</style>
+  </style>
 </head>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <body>
- <section id="cardapio">
 
-    <div class="section-title" data-aos="fade-up">
-      <span>Cardápio</span>
-      <h2>Pizzas <b></b></h2>
-    </div>
+  <div class="container">
 
-    <div class="menu-grid">
+    <h1 class="title">Pizza Grande</h1>
 
-      <div class="menu-card" data-aos="fade-up">
+    <!-- Pizza 1 -->
+    <div class="pizza-card">
 
-        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
+      <img
+        class="pizza-image"
+        src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800"
+      />
 
-        <div class="menu-content">
+      <div class="pizza-content">
 
-          <h3>Pizzas tradicionais</h3>
+        <div class="pizza-name">Frango</div>
 
-          <!--<span class="price">R$ 38</span>
-
-           <p>
-            Massa artesanal com até 2 sabores.
-          </p> -->
-
-          <a href="index2.html" class="btn">
-            Ver agora
-          </a>
-
+        <div class="pizza-description">
+          (Molho, Muçarela, Frango, Ervilha, Milho e Azeitona)
         </div>
+
+        <div class="pizza-size">GRANDE</div>
+
+        <div class="pizza-price">R$ 52,90</div>
 
       </div>
 
-      <div class="menu-card" data-aos="fade-up" data-aos-delay="100">
-
-        <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="menu-content">
-
-          <h3>Pizzas especiais</h3>
-
-          <!--<span class="price">R$ 42</span>
-
-           <p>
-            Filé mignon, cebola caramelizada e catupiry.
-          </p> -->
-
-          <a href="index2.html" class="btn">
-            Ver agora
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="menu-card" data-aos="fade-up" data-aos-delay="200">
-
-        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="menu-content">
-
-          <h3>Pizzas doces</h3>
-
-          <!--<span class="price">R$ 32</span>
-
-           <p>
-            Massas italianas frescas com molhos artesanais.
-          </p> -->
-
-          <a href="index2.html" class="btn">
-            Ver agora
-          </a>
-
-        </div>
-
-      </div>
+      <button
+        class="add-btn"
+        onclick="addToCart('Pizza Frango Grande', 52.90)"
+      >
+        +
+      </button>
 
     </div>
 
-  </section>
+    <!-- Pizza 2 -->
+    <div class="pizza-card">
+
+      <img
+        class="pizza-image"
+        src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800"
+      />
+
+      <div class="pizza-content">
+
+        <div class="pizza-name">Calabresa</div>
+
+        <div class="pizza-description">
+          (Molho, Muçarela, Calabresa e Cebola)
+        </div>
+
+        <div class="pizza-size">GRANDE</div>
+
+        <div class="pizza-price">R$ 52,90</div>
+
+      </div>
+
+      <button
+        class="add-btn"
+        onclick="addToCart('Pizza Calabresa Grande', 52.90)"
+      >
+        +
+      </button>
+
+    </div>
+
+    <!-- Pizza 3 -->
+    <div class="pizza-card">
+
+      <img
+        class="pizza-image"
+        src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?q=80&w=800"
+      />
+
+      <div class="pizza-content">
+
+        <div class="pizza-name">Mussarela</div>
+
+        <div class="pizza-description">
+          (Molho, Muçarela, Tomate e Orégano)
+        </div>
+
+        <div class="pizza-size">GRANDE</div>
+
+        <div class="pizza-price">R$ 52,90</div>
+
+      </div>
+
+      <button
+        class="add-btn"
+        onclick="addToCart('Pizza Mussarela Grande', 52.90)"
+      >
+        +
+      </button>
+
+    </div>
+
+  </div>
+
+  <button class="cart" onclick="sendWhatsApp()">
+    Fazer Pedido 🛒
+  </button>
+
+  <script>
+
+    let cart = [];
+
+    function addToCart(name, price){
+
+      cart.push({
+        name,
+        price
+      });
+
+      alert(name + " adicionada ao pedido!");
+    }
+
+    function sendWhatsApp(){
+
+      if(cart.length === 0){
+        alert("Adicione pelo menos uma pizza!");
+        return;
+      }
+
+      let message = "🍕 *NOVO PEDIDO* %0A%0A";
+
+      let total = 0;
+
+      cart.forEach((item, index) => {
+
+        message += `*${index + 1}.* ${item.name} - R$ ${item.price.toFixed(2)}%0A`;
+
+        total += item.price;
+      });
+
+      message += `%0A💰 *Total:* R$ ${total.toFixed(2)}`;
+
+      /*
+        TROQUE O NÚMERO ABAIXO PELO WHATSAPP DA PIZZARIA
+        Exemplo:
+        5585999999999
+      */
+
+      const phone = "5585991681265";
+
+      const url =
+        `https://wa.me/${phone}?text=${message}`;
+
+      window.open(url, "_blank");
+    }
+
+  </script>
+
 </body>
 </html>
